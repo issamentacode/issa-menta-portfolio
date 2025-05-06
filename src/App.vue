@@ -2,11 +2,11 @@
   <div class="min-h-screen bg-gray-50 text-gray-800 font-sans">
     <!-- Header / Introduction -->
     <section class="bg-gradient-to-br from-slate-800 to-gray-900 text-white py-14" >
-  <div class="container mx-auto text-center px-4">
+  <div class="container mx-auto px-4 ">
     <!-- Photo centrée -->
-    <div class="w-40 h-40 rounded-full overflow-hidden shadow-lg border-4 border-blue-500 mb-4" data-aos="zoom-in">
+    <div class="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-blue-500 mb-4 bg-size-[auto_100px]" data-aos="zoom-in">
       <img
-       src="/src/assets/profile.jpg" class="w-full h-full object-cover"
+      class="h-96 w-48 object-contain ..." src="/src/assets/profile.jpg"
         alt="Photo de profil"
       />
     </div>
