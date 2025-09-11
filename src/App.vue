@@ -28,7 +28,7 @@
           <!-- Loading pour l'image de profil -->
           <img 
             v-if="!imageLoading" 
-            src="/profile.jpg" 
+            src="https://github.com/issamentacode/issa-menta-portfolio/blob/main/public/profile.jpg" 
             alt="Portrait d'Issa Menta, spécialiste en cybersécurité et développeur IA"
             class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25" width="128" height="128"
             
