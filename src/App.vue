@@ -24,14 +24,13 @@
       </div>
       
       <div class="relative z-10 text-center px-6" data-aos="fade-up">
-          <div class="flex flex-col items-center">
-    <img 
-      :src="profilePic" 
-      alt="Issa MENTA"
-      class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25"
-    />
-    <h1 class="mt-4 text-2xl font-bold text-white">Issa MENTA</h1>
-  </div>
+            <div class="flex flex-col items-center">
+            <img 
+              :src="profilePic" 
+              alt="Issa MENTA"
+              class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25"
+            />
+          </div>
         <h1 class="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
           Issa MENTA
         </h1>
@@ -506,7 +505,7 @@ import { ref, computed, onMounted } from 'vue'
 import AOS from 'aos' // Import AOS pour les animations
 import 'aos/dist/aos.css' // CSS AOS
 
-import profilePic from '@/assets/profile.jpg'
+import profilePic from './assets/profile.jpg' // <-- utiliser un chemin relatif correct
 
 
 // Données réactives
