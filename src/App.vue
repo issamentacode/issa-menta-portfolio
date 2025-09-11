@@ -759,6 +759,15 @@ onMounted(() => {
 })
 </script>
 
+<script setup>
+import profilePic from '@/assets/profile.jpg'
+</script>
+
+<template>
+  <img :src="profilePic" alt="Issa MENTA" />
+</template>
+
+
 <style scoped>
 /* Transition pour le modal */
 .modal-enter-active,
