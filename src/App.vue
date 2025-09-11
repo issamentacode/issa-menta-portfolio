@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-    <!-- Barre de Navigation Sticky -->
+    <!-- Navigation Sticky pour Accès Rapide aux Sections -->
     <nav class="fixed top-0 left-0 right-0 bg-gray-900/80 backdrop-blur-md z-40 shadow-lg">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#" class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Issa MENTA</a>
@@ -15,7 +15,7 @@
       </div>
     </nav>
 
-    <!-- Section Hero -->
+    <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-cyan-900/20"></div>
       <div class="absolute inset-0">
@@ -25,14 +25,19 @@
       
       <div class="relative z-10 text-center px-6" data-aos="fade-up">
         <div class="mb-8">
+          <!-- Loading pour l'image de profil -->
           <img 
             v-if="!imageLoading" 
             src="/profile.png" 
             alt="Portrait d'Issa Menta, spécialiste en cybersécurité et développeur IA"
             class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25"
             @load="imageLoading = false"
+            @error="imageError = true"
           />
-          <div v-if="imageLoading" class="w-32 h-32 mx-auto rounded-full bg-gray-700 animate-pulse"></div>
+          <div v-else-if="!imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 animate-pulse"></div>
+          <div v-if="imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 flex items-center justify-center text-sm text-gray-400">
+            Photo non disponible
+          </div>
         </div>
         <h1 class="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
           Issa MENTA
@@ -45,10 +50,10 @@
         </p>
         
         <div class="flex flex-wrap justify-center gap-4 mb-8">
-          <a href="mailto:issamono62@gmail.com" class="flex items-center bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full hover:bg-gray-700/50 transition" aria-label="Envoyer un email à Issa Menta">
+          <a href="mailto:issamono62@gmail.com" class="flex items-center bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full hover:bg-gray-700/50 transition" aria-label="Envoyer un email">
             📧 issamono62@gmail.com
           </a>
-          <a href="tel:+33773294931" class="flex items-center bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full hover:bg-gray-700/50 transition" aria-label="Appeler Issa Menta">
+          <a href="tel:+33773294931" class="flex items-center bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full hover:bg-gray-700/50 transition" aria-label="Appeler">
             📞 +33 7 73 29 49 31
           </a>
           <div class="flex items-center bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full">
@@ -57,10 +62,10 @@
         </div>
         
         <div class="flex justify-center gap-4 mb-12">
-          <a href="https://linkedin.com/in/issa-menta" target="_blank" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition" aria-label="Profil LinkedIn d'Issa Menta">
+          <a href="https://linkedin.com/in/issa-menta" target="_blank" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition" aria-label="LinkedIn">
             💼
           </a>
-          <a href="https://github.com/issamentacode" target="_blank" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition" aria-label="Profil GitHub d'Issa Menta">
+          <a href="https://github.com/issamentacode" target="_blank" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition" aria-label="GitHub">
             💻
           </a>
         </div>
@@ -69,14 +74,14 @@
           href="/CV_Issa_Menta.pdf" 
           download
           class="inline-flex items-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 px-8 py-3 rounded-full font-semibold transition transform hover:scale-105"
-          aria-label="Télécharger le CV d'Issa Menta"
+          aria-label="Télécharger le CV"
         >
           📄 Télécharger mon CV
         </a>
       </div>
     </section>
 
-    <!-- Section À propos -->
+    <!-- About Section -->
     <section id="about" class="py-20 px-6" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">À propos de moi</h2>
@@ -131,7 +136,7 @@
       </div>
     </section>
 
-    <!-- Section Compétences -->
+    <!-- Skills Section -->
     <section id="skills" class="py-20 px-6 bg-gray-900/50" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">Compétences Techniques</h2>
@@ -208,12 +213,12 @@
       </div>
     </section>
 
-    <!-- Section Projets -->
+    <!-- Projects Section -->
     <section id="projects" class="py-20 px-6" data-aos="fade-up">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">Projets & Réalisations</h2>
         
-        <!-- Onglets de Filtrage -->
+        <!-- Filter Tabs -->
         <div class="flex flex-wrap justify-center gap-4 mb-12">
           <button
             v-for="filter in filters"
@@ -225,13 +230,13 @@
                 ? 'bg-cyan-600 text-white' 
                 : 'bg-gray-800/50 hover:bg-gray-700/50'
             ]"
-            :aria-label="'Filtrer par ' + filter.label"
+            aria-label="Filtrer par {{ filter.label }}"
           >
             {{ filter.icon }} {{ filter.label }}
           </button>
         </div>
 
-        <!-- Grille de Projets -->
+        <!-- Projects Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div 
             v-for="(project, idx) in filteredProjects" 
@@ -271,7 +276,7 @@
                   target="_blank" 
                   @click.stop
                   class="flex items-center bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded text-sm hover:bg-cyan-600/30 transition"
-                  :aria-label="'Voir la démo du projet ' + project.title"
+                  aria-label="Démo du projet {{ project.title }}"
                 >
                   🔗 Demo
                 </a>
@@ -281,7 +286,7 @@
                   target="_blank" 
                   @click.stop
                   class="flex items-center bg-gray-700/50 text-gray-300 px-3 py-1 rounded text-sm hover:bg-gray-600/50 transition"
-                  :aria-label="'Voir le code source du projet ' + project.title"
+                  aria-label="Code du projet {{ project.title }}"
                 >
                   💻 Code
                 </a>
@@ -292,7 +297,7 @@
       </div>
     </section>
 
-    <!-- Section Expérience -->
+    <!-- Experience Section -->
     <section id="experience" class="py-20 px-6 bg-gray-900/50" data-aos="fade-up">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">Expérience & Formation</h2>
@@ -327,7 +332,7 @@
       </div>
     </section>
 
-    <!-- Section Certifications -->
+    <!-- Certifications Section -->
     <section id="certifications" class="py-20 px-6" data-aos="fade-up">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-4xl font-bold text-center mb-16">Certifications & Reconnaissance</h2>
@@ -359,7 +364,7 @@
       </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-gray-900/50" data-aos="fade-up">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-bold mb-8">Contactez-moi</h2>
@@ -371,14 +376,14 @@
           <div class="bg-gray-800/50 backdrop-blur rounded-xl p-6">
             <div class="text-4xl mb-4">📧</div>
             <h3 class="font-semibold mb-2">Email</h3>
-            <a href="mailto:issamono62@gmail.com" class="text-gray-300 hover:text-cyan-400 transition" aria-label="Envoyer un email à Issa Menta">
+            <a href="mailto:issamono62@gmail.com" class="text-gray-300 hover:text-cyan-400 transition" aria-label="Email">
               issamono62@gmail.com
             </a>
           </div>
           <div class="bg-gray-800/50 backdrop-blur rounded-xl p-6">
             <div class="text-4xl mb-4">📞</div>
             <h3 class="font-semibold mb-2">Téléphone</h3>
-            <a href="tel:+33773294931" class="text-gray-300 hover:text-cyan-400 transition" aria-label="Appeler Issa Menta">
+            <a href="tel:+33773294931" class="text-gray-300 hover:text-cyan-400 transition" aria-label="Téléphone">
               +33 7 73 29 49 31
             </a>
           </div>
@@ -394,7 +399,7 @@
             href="https://linkedin.com/in/issa-menta" 
             target="_blank"
             class="flex items-center bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition transform hover:scale-105"
-            aria-label="Profil LinkedIn d'Issa Menta"
+            aria-label="LinkedIn"
           >
             💼 LinkedIn
           </a>
@@ -402,7 +407,7 @@
             href="https://github.com/issamentacode" 
             target="_blank"
             class="flex items-center bg-gray-700 hover:bg-gray-600 px-6 py-3 rounded-full transition transform hover:scale-105"
-            aria-label="Profil GitHub d'Issa Menta"
+            aria-label="GitHub"
           >
             💻 GitHub
           </a>
@@ -410,7 +415,7 @@
             href="/CV_Issa_Menta.pdf" 
             download
             class="flex items-center bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 px-6 py-3 rounded-full transition transform hover:scale-105"
-            aria-label="Télécharger le CV d'Issa Menta"
+            aria-label="Télécharger CV"
           >
             📄 Télécharger CV
           </a>
@@ -427,7 +432,7 @@
       </div>
     </footer>
 
-    <!-- Modal Projet -->
+    <!-- Project Modal -->
     <transition name="modal">
       <div v-if="selectedProject" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" @click="selectedProject = null">
         <div class="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all" @click.stop>
@@ -435,7 +440,7 @@
             <button 
               @click="selectedProject = null"
               class="absolute top-4 right-4 z-10 bg-gray-800 hover:bg-gray-700 rounded-full p-2 text-white transition"
-              aria-label="Fermer la modale du projet"
+              aria-label="Fermer"
             >
               ✕
             </button>
@@ -481,7 +486,7 @@
                   :href="selectedProject.demo" 
                   target="_blank"
                   class="flex items-center bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg transition"
-                  :aria-label="'Voir la démo du projet ' + selectedProject.title"
+                  aria-label="Voir le projet {{ selectedProject.title }}"
                 >
                   🔗 Voir le projet
                 </a>
@@ -490,7 +495,7 @@
                   :href="selectedProject.github" 
                   target="_blank"
                   class="flex items-center bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition"
-                  :aria-label="'Voir le code source du projet ' + selectedProject.title"
+                  aria-label="Code source du projet {{ selectedProject.title }}"
                 >
                   💻 Code source
                 </a>
@@ -505,15 +510,16 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import AOS from 'aos'  // Import manquant pour les animations
-import 'aos/dist/aos.css'  // CSS pour AOS
+import AOS from 'aos' // Import AOS pour les animations
+import 'aos/dist/aos.css' // CSS AOS
 
 // Données réactives
 const activeFilter = ref('all')
 const selectedProject = ref(null)
-const imageLoading = ref(true)  // Pour le loading de l'image de profil
+const imageLoading = ref(true) // Loading pour l'image
+const imageError = ref(false) // Erreur si image non trouvée
 
-// Données des compétences (inchangées)
+// Skills data (inchangé)
 const cybersecuritySkills = ref([
   { name: "Pentesting", level: 90, tools: "Nmap, Metasploit, Burp Suite" },
   { name: "Network Security", level: 85, tools: "pfSense, Wireshark, Snort" },
@@ -535,10 +541,8 @@ const developmentSkills = ref([
   { name: "Databases", level: 82, tools: "SQL, MongoDB, PostgreSQL" }
 ])
 
-// Données des projets (inchangées, mais liens conditionnels)
+// Projects data (complet, inchangé)
 const projects = ref([
-  // ... (copie ton array projects complet ici, comme dans ton message original)
-  // Exemple pour le premier :
   {
     id: 1,
     title: "ATP-Consulting",
@@ -551,10 +555,141 @@ const projects = ref([
     github: "#",
     features: ["Design responsive", "Système de réservation", "Interface admin", "SEO optimisé"]
   },
-  // Ajoute les 11 autres projets de ton original...
+  {
+    id: 2,
+    title: "Elegance Technique",
+    description: "Atelier de réparation auto à Yaoundé avec système de prise de rendez-vous.",
+    longDescription: "Application web pour un garage automobile avec système complet de gestion des rendez-vous, suivi des réparations et interface client intuitive.",
+    tech: ["Vue.js", "Firebase", "Tailwind CSS"],
+    category: "web",
+    emoji: "🚗",
+    demo: "https://elegance-technique.com",
+    github: "#",
+    features: ["Gestion RDV", "Suivi réparations", "Notifications", "Paiement en ligne"]
+  },
+  {
+    id: 3,
+    title: "LocalHost Digital",
+    description: "Agence Web & Digitale basée à Douala, spécialisée en solutions digitales.",
+    longDescription: "Site vitrine moderne pour une agence digitale avec portfolio interactif, présentation des services et système de contact avancé.",
+    tech: ["Vue.js", "Tailwind CSS", "Nuxt.js"],
+    category: "web",
+    emoji: "💻",
+    demo: "https://localhost-digital.com",
+    github: "#",
+    features: ["Portfolio interactif", "Animations CSS", "Multi-langues", "CMS intégré"]
+  },
+  {
+    id: 4,
+    title: "Sand Beauty Shop",
+    description: "Boutique en ligne de produits de beauté professionnels, shopping et wishlist.",
+    longDescription: "E-commerce complet pour produits de beauté avec panier avancé, wishlist, système de paiement sécurisé et interface d'administration.",
+    tech: ["Nuxt.js", "Stripe", "Vue.js", "PostgreSQL"],
+    category: "ecommerce",
+    emoji: "💄",
+    demo: "https://sand-beauty.com",
+    github: "#",
+    features: ["E-commerce", "Paiement Stripe", "Wishlist", "Gestion stock"]
+  },
+  {
+    id: 5,
+    title: "TW Micronics",
+    description: "Solutions IA et transformation digitale pour entreprises en Afrique.",
+    longDescription: "Plateforme technologique offrant des solutions d'intelligence artificielle et de transformation digitale adaptées aux entreprises africaines.",
+    tech: ["React", "TypeScript", "AI/ML", "Python"],
+    category: "ai",
+    emoji: "🤖",
+    demo: "https://twmicronics.com",
+    github: "#",
+    features: ["Solutions IA", "Dashboard analytics", "API REST", "Machine Learning"]
+  },
+  {
+    id: 6,
+    title: "DeepChatter AI Security Analysis",
+    description: "Analyse de sécurité d'une plateforme d'IA compromise par pollution de données.",
+    longDescription: "Projet académique d'analyse approfondie des vulnérabilités d'une plateforme IA utilisée dans les secteurs critiques (santé, finance). Étude complète des vecteurs d'attaque, stratégies défensives et plan de remédiation suite à une compromission par pollution de données malveillantes.",
+    tech: ["Cybersecurity Analysis", "Risk Assessment", "MITRE ATT&CK", "Incident Response"],
+    category: "security",
+    emoji: "🛡️",
+    demo: "#",
+    github: "#",
+    features: ["Évaluation des risques", "Profilage d'acteurs malveillants", "Plan d'intervention", "Conformité RGPD/HIPAA"]
+  },
+  {
+    id: 7,
+    title: "Spam Detection ML Models",
+    description: "Modèles d'apprentissage automatique pour la détection de spam avec 98% de précision.",
+    longDescription: "Développement et comparaison de plusieurs algorithmes de machine learning (Random Forest, AdaBoost, Gradient Boosting) pour la classification de messages spam/ham. Optimisation des performances avec vectorisation TF-IDF et validation croisée.",
+    tech: ["Python", "Scikit-learn", "TF-IDF", "Random Forest", "Gradient Boosting"],
+    category: "ai",
+    emoji: "🔍",
+    demo: "#",
+    github: "#",
+    features: ["Précision 98%", "Vectorisation TF-IDF", "Comparaison d'algorithmes", "Validation croisée"]
+  },
+  {
+    id: 8,
+    title: "Cybersecurity Traffic Analysis",
+    description: "Analyse et classification du trafic réseau pour détecter les attaques DDoS avec 99.9% de précision.",
+    longDescription: "Système de détection d'intrusion utilisant le machine learning pour analyser les flux réseau en temps réel. Classification des attaques DDoS avec des modèles de gradient boosting sur dataset CICIDS2017, atteignant une précision exceptionnelle de 99.97%.",
+    tech: ["Python", "Gradient Boosting", "Network Analysis", "CICIDS2017", "Pandas"],
+    category: "security",
+    emoji: "🌐",
+    demo: "#",
+    github: "#",
+    features: ["Précision 99.97%", "Détection temps réel", "Analyse flux réseau", "Classification DDoS"]
+  },
+  {
+    id: 9,
+    title: "Healthcare Information Systems Analysis",
+    description: "Analyse des systèmes d'information fantômes dans un établissement de santé.",
+    longDescription: "Étude approfondie des problématiques d'intégration des systèmes d'information dans le secteur hospitalier. Analyse des systèmes 'fantômes' utilisés par les professionnels de santé, évaluation des risques de sécurité et recommandations de gouvernance IT.",
+    tech: ["IT Governance", "Risk Analysis", "Healthcare IT", "GDPR Compliance"],
+    category: "security",
+    emoji: "🏥",
+    demo: "#",
+    github: "#",
+    features: ["Analyse des risques", "Conformité RGPD", "Gouvernance IT", "Sécurité des données"]
+  },
+  {
+    id: 10,
+    title: "Snort IDS Configuration & Rules",
+    description: "Déploiement et configuration avancée de Snort avec création de règles personnalisées de détection d'intrusion.",
+    longDescription: "Mise en place complète d'un système de détection d'intrusion Snort avec création de règles sur mesure pour détecter différents types d'attaques : scan de ports, attaques DoS, connexions suspectes et tentatives d'intrusion. Utilisation de Scapy et hping3 pour la simulation d'attaques et validation des règles.",
+    tech: ["Snort IDS", "Network Security", "Scapy", "hping3", "Rule Writing"],
+    category: "security",
+    emoji: "🔍",
+    demo: "#",
+    github: "#",
+    features: ["Détection pings anormaux", "Détection SYN Flood", "Règles connexions Telnet", "Détection trafic HTTPS suspect"]
+  },
+  {
+    id: 11,
+    title: "pfSense Firewall Advanced Config",
+    description: "Configuration complète de pfSense avec règles de pare-feu avancées et politique de sécurité réseau.",
+    longDescription: "Déploiement et configuration avancée de pfSense sur VMware avec mise en place de règles de filtrage complexes, configuration NAT, VPN OpenVPN avec certificats SSL/TLS, et implémentation de politiques de sécurité réseau granulaires pour un environnement d'entreprise.",
+    tech: ["pfSense", "OpenVPN", "SSL/TLS", "NAT Configuration", "Firewall Rules"],
+    category: "security",
+    emoji: "🛡️",
+    demo: "#",
+    github: "#",
+    features: ["Configuration NAT", "Règles pare-feu", "VPN SSL/TLS", "Filtrage par domaine"]
+  },
+  {
+    id: 12,
+    title: "OpenSSL Cryptography Lab",
+    description: "Laboratoire complet de cryptographie avec OpenSSL : chiffrement symétrique, asymétrique et signatures numériques.",
+    longDescription: "Implémentation pratique des techniques cryptographiques modernes sous Linux avec OpenSSL. Maîtrise du chiffrement symétrique AES-256, cryptographie asymétrique RSA, signatures numériques, gestion de certificats X.509 et création d'autorités de certification pour infrastructures PKI.",
+    tech: ["OpenSSL", "AES-256", "RSA", "X.509 Certificates", "PKI", "Digital Signatures"],
+    category: "security",
+    emoji: "🔐",
+    demo: "#",
+    github: "#",
+    features: ["Chiffrement AES-256", "Clés RSA 4096-bit", "Signatures numériques", "Certificats X.509"]
+  }
 ])
 
-// Filtres (inchangés)
+// Filters (inchangé)
 const filters = ref([
   { key: 'all', label: 'Tous', icon: '🌐' },
   { key: 'web', label: 'Web', icon: '💻' },
@@ -563,17 +698,51 @@ const filters = ref([
   { key: 'ai', label: 'IA', icon: '🤖' }
 ])
 
-// Expériences (inchangées)
+// Experience data (inchangé)
 const experiences = ref([
-  // ... (copie ton array experiences complet)
+  {
+    title: "MSc Manager Cybersécurité",
+    company: "ECE Paris",
+    period: "2024 - 2026",
+    description: "Formation spécialisée en management de la cybersécurité, pentesting et gouvernance IT",
+    tasks: ["Pentesting avancé", "Gestion des risques", "Analyse forensique", "Management d'équipes cyber"]
+  },
+  {
+    title: "Master Réseaux & Sécurité",
+    company: "Université Djillali Liabès, Algérie",
+    period: "2023 - 2025",
+    description: "Spécialisation en sécurité des réseaux informatiques et systèmes d'information",
+    tasks: ["Sécurité réseau", "Cryptographie", "Systèmes distribués", "Projets de recherche"]
+  },
+  {
+    title: "Technicien Réseaux",
+    company: "AGETIC, Mali",
+    period: "Août - Sept 2023",
+    description: "Maintenance réseau et optimisation des infrastructures IT",
+    tasks: ["Maintenance réseau", "Gestion matériel", "Support technique", "Optimisation performance"]
+  },
+  {
+    title: "Licence Systèmes d'Information",
+    company: "Université Djillali Liabès",
+    period: "2019 - 2023",
+    description: "Formation fondamentale en informatique et systèmes d'information",
+    tasks: ["Développement logiciel", "Base de données", "Réseaux informatiques", "Gestion de projets"]
+  }
 ])
 
-// Certifications (inchangées)
+// Certifications (inchangé)
 const certifications = ref([
-  // ... (copie ton array certifications complet)
+  { name: "CEH Fundamentals", org: "EC-Council", year: "2025", verified: true },
+  { name: "IBM Cybersecurity Analyst", org: "IBM", year: "2023", verified: true },
+  { name: "HTML/CSS/JS for Web Dev", org: "Coursera", year: "2025", verified: true },
+  { name: "Introduction to DevOps", org: "Coursera", year: "2024", verified: true },
+  { name: "Python for Data Science", org: "DataScientest", year: "2024", verified: true },
+  { name: "CompTIA Security+", org: "CompTIA", year: "En cours", verified: false },
+  { name: "Azure AI Fundamentals", org: "Microsoft", year: "En cours", verified: false },
+  { name: "IBM Data Science", org: "IBM", year: "En cours", verified: false }
 ])
 
-// Propriétés calculées
+// Computed properties
 const filteredProjects = computed(() => {
   if (activeFilter.value === 'all') {
     return projects.value
@@ -581,7 +750,7 @@ const filteredProjects = computed(() => {
   return projects.value.filter(p => p.category === activeFilter.value)
 })
 
-// Initialisation AOS (manquante)
+// Initialisation AOS pour les animations
 onMounted(() => {
   AOS.init({
     duration: 1000,
@@ -592,7 +761,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Transition pour le modal (manquante) */
+/* Transition pour le modal */
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.3s ease;
