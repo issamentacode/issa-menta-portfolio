@@ -28,11 +28,11 @@
           <!-- Loading pour l'image de profil -->
           <img 
             v-if="!imageLoading" 
-            src="/profile.png" 
+            src="/profile.jpg" 
             alt="Portrait d'Issa Menta, spécialiste en cybersécurité et développeur IA"
             class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25"
             @load="imageLoading = false"
-            @error="imageError = true"
+            @error="console.log('Image error: profile.jpg not found')"
           />
           <div v-else-if="!imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 animate-pulse"></div>
           <div v-if="imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 flex items-center justify-center text-sm text-gray-400">
@@ -717,7 +717,7 @@ const experiences = ref([
   {
     title: "Technicien Réseaux",
     company: "AGETIC, Mali",
-    period: "Août - Sept 2023",
+    period: "Août - Sept 2021",
     description: "Maintenance réseau et optimisation des infrastructures IT",
     tasks: ["Maintenance réseau", "Gestion matériel", "Support technique", "Optimisation performance"]
   },
