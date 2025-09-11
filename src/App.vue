@@ -31,8 +31,7 @@
             src="/profile.jpg" 
             alt="Portrait d'Issa Menta, spécialiste en cybersécurité et développeur IA"
             class="w-32 h-32 rounded-full mx-auto border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25" width="128" height="128"
-            @load="imageLoading = false"
-            @error="console.log('Image error: profile.jpg not found')"
+            
           />
           <div v-else-if="!imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 animate-pulse"></div>
           <div v-if="imageError" class="w-32 h-32 mx-auto rounded-full bg-gray-700 flex items-center justify-center text-sm text-gray-400">
