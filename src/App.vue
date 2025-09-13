@@ -539,7 +539,7 @@ const developmentSkills = ref([
 // Projects data (complet, inchangé)
 const projects = ref([
   {
-    id: 1,
+    id: 12,
     title: "ATP-Consulting",
     description: "Site de service en stratégie d'innovation et transformation digitale, spécialisé Industrie 4.0.",
     longDescription: "Plateforme complète pour une entreprise de consulting spécialisée dans l'innovation industrielle et la transformation digitale. Interface moderne avec système de réservation et présentation des services.",
@@ -551,7 +551,7 @@ const projects = ref([
     features: ["Design responsive", "Système de réservation", "Interface admin", "SEO optimisé"]
   },
   {
-    id: 2,
+    id: 8,
     title: "Elegance Technique",
     description: "Atelier de réparation auto à Yaoundé avec système de prise de rendez-vous.",
     longDescription: "Application web pour un garage automobile avec système complet de gestion des rendez-vous, suivi des réparations et interface client intuitive.",
@@ -563,7 +563,7 @@ const projects = ref([
     features: ["Gestion RDV", "Suivi réparations", "Notifications", "Paiement en ligne"]
   },
   {
-    id: 3,
+    id: 9,
     title: "LocalHost Digital",
     description: "Agence Web & Digitale basée à Douala, spécialisée en solutions digitales.",
     longDescription: "Site vitrine moderne pour une agence digitale avec portfolio interactif, présentation des services et système de contact avancé.",
@@ -575,7 +575,7 @@ const projects = ref([
     features: ["Portfolio interactif", "Animations CSS", "Multi-langues", "CMS intégré"]
   },
   {
-    id: 4,
+    id: 10,
     title: "Sand Beauty Shop",
     description: "Boutique en ligne de produits de beauté professionnels, shopping et wishlist.",
     longDescription: "E-commerce complet pour produits de beauté avec panier avancé, wishlist, système de paiement sécurisé et interface d'administration.",
@@ -587,7 +587,7 @@ const projects = ref([
     features: ["E-commerce", "Paiement Stripe", "Wishlist", "Gestion stock"]
   },
   {
-    id: 5,
+    id: 11,
     title: "TW Micronics",
     description: "Solutions IA et transformation digitale pour entreprises en Afrique.",
     longDescription: "Plateforme technologique offrant des solutions d'intelligence artificielle et de transformation digitale adaptées aux entreprises africaines.",
@@ -599,7 +599,7 @@ const projects = ref([
     features: ["Solutions IA", "Dashboard analytics", "API REST", "Machine Learning"]
   },
   {
-    id: 6,
+    id: 1,
     title: "DeepChatter AI Security Analysis",
     description: "Analyse de sécurité d'une plateforme d'IA compromise par pollution de données.",
     longDescription: "Projet académique d'analyse approfondie des vulnérabilités d'une plateforme IA utilisée dans les secteurs critiques (santé, finance). Étude complète des vecteurs d'attaque, stratégies défensives et plan de remédiation suite à une compromission par pollution de données malveillantes.",
@@ -611,7 +611,7 @@ const projects = ref([
     features: ["Évaluation des risques", "Profilage d'acteurs malveillants", "Plan d'intervention", "Conformité RGPD/HIPAA"]
   },
   {
-    id: 7,
+    id: 2,
     title: "Spam Detection ML Models",
     description: "Modèles d'apprentissage automatique pour la détection de spam avec 98% de précision.",
     longDescription: "Développement et comparaison de plusieurs algorithmes de machine learning (Random Forest, AdaBoost, Gradient Boosting) pour la classification de messages spam/ham. Optimisation des performances avec vectorisation TF-IDF et validation croisée.",
@@ -623,7 +623,7 @@ const projects = ref([
     features: ["Précision 98%", "Vectorisation TF-IDF", "Comparaison d'algorithmes", "Validation croisée"]
   },
   {
-    id: 8,
+    id: 3,
     title: "Cybersecurity Traffic Analysis",
     description: "Analyse et classification du trafic réseau pour détecter les attaques DDoS avec 99.9% de précision.",
     longDescription: "Système de détection d'intrusion utilisant le machine learning pour analyser les flux réseau en temps réel. Classification des attaques DDoS avec des modèles de gradient boosting sur dataset CICIDS2017, atteignant une précision exceptionnelle de 99.97%.",
@@ -635,7 +635,7 @@ const projects = ref([
     features: ["Précision 99.97%", "Détection temps réel", "Analyse flux réseau", "Classification DDoS"]
   },
   {
-    id: 9,
+    id: 4,
     title: "Healthcare Information Systems Analysis",
     description: "Analyse des systèmes d'information fantômes dans un établissement de santé.",
     longDescription: "Étude approfondie des problématiques d'intégration des systèmes d'information dans le secteur hospitalier. Analyse des systèmes 'fantômes' utilisés par les professionnels de santé, évaluation des risques de sécurité et recommandations de gouvernance IT.",
@@ -647,7 +647,7 @@ const projects = ref([
     features: ["Analyse des risques", "Conformité RGPD", "Gouvernance IT", "Sécurité des données"]
   },
   {
-    id: 10,
+    id: 5,
     title: "Snort IDS Configuration & Rules",
     description: "Déploiement et configuration avancée de Snort avec création de règles personnalisées de détection d'intrusion.",
     longDescription: "Mise en place complète d'un système de détection d'intrusion Snort avec création de règles sur mesure pour détecter différents types d'attaques : scan de ports, attaques DoS, connexions suspectes et tentatives d'intrusion. Utilisation de Scapy et hping3 pour la simulation d'attaques et validation des règles.",
@@ -659,7 +659,7 @@ const projects = ref([
     features: ["Détection pings anormaux", "Détection SYN Flood", "Règles connexions Telnet", "Détection trafic HTTPS suspect"]
   },
   {
-    id: 11,
+    id: 6,
     title: "pfSense Firewall Advanced Config",
     description: "Configuration complète de pfSense avec règles de pare-feu avancées et politique de sécurité réseau.",
     longDescription: "Déploiement et configuration avancée de pfSense sur VMware avec mise en place de règles de filtrage complexes, configuration NAT, VPN OpenVPN avec certificats SSL/TLS, et implémentation de politiques de sécurité réseau granulaires pour un environnement d'entreprise.",
@@ -671,7 +671,7 @@ const projects = ref([
     features: ["Configuration NAT", "Règles pare-feu", "VPN SSL/TLS", "Filtrage par domaine"]
   },
   {
-    id: 12,
+    id: 7,
     title: "OpenSSL Cryptography Lab",
     description: "Laboratoire complet de cryptographie avec OpenSSL : chiffrement symétrique, asymétrique et signatures numériques.",
     longDescription: "Implémentation pratique des techniques cryptographiques modernes sous Linux avec OpenSSL. Maîtrise du chiffrement symétrique AES-256, cryptographie asymétrique RSA, signatures numériques, gestion de certificats X.509 et création d'autorités de certification pour infrastructures PKI.",
