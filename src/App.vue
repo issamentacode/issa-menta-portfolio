@@ -538,66 +538,8 @@ const developmentSkills = ref([
 
 // Projects data (complet, inchangé)
 const projects = ref([
-  {
-    id: 12,
-    title: "ATP-Consulting",
-    description: "Site de service en stratégie d'innovation et transformation digitale, spécialisé Industrie 4.0.",
-    longDescription: "Plateforme complète pour une entreprise de consulting spécialisée dans l'innovation industrielle et la transformation digitale. Interface moderne avec système de réservation et présentation des services.",
-    tech: ["Vue.js", "Node.js", "Docker", "MongoDB"],
-    category: "web",
-    emoji: "🏢",
-    demo: "https://atpanconsulting.com",
-    github: "#",
-    features: ["Design responsive", "Système de réservation", "Interface admin", "SEO optimisé"]
-  },
-  {
-    id: 8,
-    title: "Elegance Technique",
-    description: "Atelier de réparation auto à Yaoundé avec système de prise de rendez-vous.",
-    longDescription: "Application web pour un garage automobile avec système complet de gestion des rendez-vous, suivi des réparations et interface client intuitive.",
-    tech: ["Vue.js", "Firebase", "Tailwind CSS"],
-    category: "web",
-    emoji: "🚗",
-    demo: "https://elegance-technique.com",
-    github: "#",
-    features: ["Gestion RDV", "Suivi réparations", "Notifications", "Paiement en ligne"]
-  },
-  {
-    id: 9,
-    title: "LocalHost Digital",
-    description: "Agence Web & Digitale basée à Douala, spécialisée en solutions digitales.",
-    longDescription: "Site vitrine moderne pour une agence digitale avec portfolio interactif, présentation des services et système de contact avancé.",
-    tech: ["Vue.js", "Tailwind CSS", "Nuxt.js"],
-    category: "web",
-    emoji: "💻",
-    demo: "https://localhost-digital.com",
-    github: "#",
-    features: ["Portfolio interactif", "Animations CSS", "Multi-langues", "CMS intégré"]
-  },
-  {
-    id: 10,
-    title: "Sand Beauty Shop",
-    description: "Boutique en ligne de produits de beauté professionnels, shopping et wishlist.",
-    longDescription: "E-commerce complet pour produits de beauté avec panier avancé, wishlist, système de paiement sécurisé et interface d'administration.",
-    tech: ["Nuxt.js", "Stripe", "Vue.js", "PostgreSQL"],
-    category: "ecommerce",
-    emoji: "💄",
-    demo: "https://sand-beauty.com",
-    github: "#",
-    features: ["E-commerce", "Paiement Stripe", "Wishlist", "Gestion stock"]
-  },
-  {
-    id: 11,
-    title: "TW Micronics",
-    description: "Solutions IA et transformation digitale pour entreprises en Afrique.",
-    longDescription: "Plateforme technologique offrant des solutions d'intelligence artificielle et de transformation digitale adaptées aux entreprises africaines.",
-    tech: ["React", "TypeScript", "AI/ML", "Python"],
-    category: "ai",
-    emoji: "🤖",
-    demo: "https://twmicronics.com",
-    github: "#",
-    features: ["Solutions IA", "Dashboard analytics", "API REST", "Machine Learning"]
-  },
+
+  
   {
     id: 1,
     title: "DeepChatter AI Security Analysis",
@@ -681,6 +623,66 @@ const projects = ref([
     demo: "#",
     github: "#",
     features: ["Chiffrement AES-256", "Clés RSA 4096-bit", "Signatures numériques", "Certificats X.509"]
+  },
+  {
+    id: 8,
+    title: "Elegance Technique",
+    description: "Atelier de réparation auto à Yaoundé avec système de prise de rendez-vous.",
+    longDescription: "Application web pour un garage automobile avec système complet de gestion des rendez-vous, suivi des réparations et interface client intuitive.",
+    tech: ["Vue.js", "Firebase", "Tailwind CSS"],
+    category: "web",
+    emoji: "🚗",
+    demo: "https://elegance-technique.com",
+    github: "#",
+    features: ["Gestion RDV", "Suivi réparations", "Notifications", "Paiement en ligne"]
+  },
+  {
+    id: 9,
+    title: "LocalHost Digital",
+    description: "Agence Web & Digitale basée à Douala, spécialisée en solutions digitales.",
+    longDescription: "Site vitrine moderne pour une agence digitale avec portfolio interactif, présentation des services et système de contact avancé.",
+    tech: ["Vue.js", "Tailwind CSS", "Nuxt.js"],
+    category: "web",
+    emoji: "💻",
+    demo: "https://localhost-digital.com",
+    github: "#",
+    features: ["Portfolio interactif", "Animations CSS", "Multi-langues", "CMS intégré"]
+  },
+  {
+    id: 10,
+    title: "Sand Beauty Shop",
+    description: "Boutique en ligne de produits de beauté professionnels, shopping et wishlist.",
+    longDescription: "E-commerce complet pour produits de beauté avec panier avancé, wishlist, système de paiement sécurisé et interface d'administration.",
+    tech: ["Nuxt.js", "Stripe", "Vue.js", "PostgreSQL"],
+    category: "ecommerce",
+    emoji: "💄",
+    demo: "https://sand-beauty.com",
+    github: "#",
+    features: ["E-commerce", "Paiement Stripe", "Wishlist", "Gestion stock"]
+  },
+  {
+    id: 11,
+    title: "TW Micronics",
+    description: "Solutions IA et transformation digitale pour entreprises en Afrique.",
+    longDescription: "Plateforme technologique offrant des solutions d'intelligence artificielle et de transformation digitale adaptées aux entreprises africaines.",
+    tech: ["React", "TypeScript", "AI/ML", "Python"],
+    category: "ai",
+    emoji: "🤖",
+    demo: "https://twmicronics.com",
+    github: "#",
+    features: ["Solutions IA", "Dashboard analytics", "API REST", "Machine Learning"]
+  },
+    {
+    id: 12,
+    title: "ATP-Consulting",
+    description: "Site de service en stratégie d'innovation et transformation digitale, spécialisé Industrie 4.0.",
+    longDescription: "Plateforme complète pour une entreprise de consulting spécialisée dans l'innovation industrielle et la transformation digitale. Interface moderne avec système de réservation et présentation des services.",
+    tech: ["Vue.js", "Node.js", "Docker", "MongoDB"],
+    category: "web",
+    emoji: "🏢",
+    demo: "https://atpanconsulting.com",
+    github: "#",
+    features: ["Design responsive", "Système de réservation", "Interface admin", "SEO optimisé"]
   }
 ])
 
